@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        String apiKey = "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";
+        String apiKey ="";
 
         ModerationService moderationService = new ModerationService(apiKey);
 
