@@ -1,10 +1,12 @@
 package org.example;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+// This class is used to store the result of the moderation process
 public class ModerationResult {
-    private ModerationCategories categories;
-    private ModerationCategoryScores category_scores;
-    private boolean flagged;
+    private ModerationCategories categories; //Stores the categories such as hate, violence, self-harm, etc.
+    private ModerationCategoryScores category_scores; //Stores the scores for each category
+    private boolean flagged; //Indicates whether the text is flagged for moderation
 
     @JsonProperty("categories")
     public ModerationCategories getCategories() {

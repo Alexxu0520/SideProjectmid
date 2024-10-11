@@ -1,5 +1,6 @@
 package org.example;
 
+// This class is used to store the text input for the moderation API
 public class TextInput {
 
     private String text;

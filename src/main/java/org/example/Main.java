@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+
         String apiKey ="";
 
         ModerationService moderationService = new ModerationService(apiKey);

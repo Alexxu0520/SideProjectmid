@@ -3,11 +3,13 @@ package org.example;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+// This class is used to store the response from the moderation API
 public class ModerationNewResponse {
 
-    private String id;
-    private String model;
-    private List<ModerationResult> results;
+    private String id; //Stores the id of the moderation request
+    private String model; //Stores the model used for moderation
+    private List<ModerationResult> results; //Stores the results of the moderation process
 
     @JsonProperty("id")
     public String getId() {
