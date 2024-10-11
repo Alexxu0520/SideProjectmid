@@ -1,7 +1,8 @@
 package org.example;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+//Each score is represented as a double (floating-point number) that indicates the severity of the category's presence in the text.
+// Higher scores typically indicate a higher likelihood or intensity of the content being flagged under that category.
 public class ModerationCategoryScores {
     @JsonProperty("hate")
     private double hate;
