@@ -20,7 +20,7 @@ public class ModerationService {
         this.objectMapper = new ObjectMapper();
     }
 
-    public ModerationNewResponse moderate(ModerationNewResponse params) throws IOException, InterruptedException {
+    public ModerationNewResponse moderate(ModerationNewParams params) throws IOException, InterruptedException {
         String requestBody = objectMapper.writeValueAsString(params);
 
         HttpRequest request = HttpRequest.newBuilder()
