@@ -15,10 +15,10 @@ public class Main {
         ModerationNewParams params1 = new ModerationNewParams(textToModerate1);
 
         String textToModerate2 = "I kill sb.";
-        ModerationNewParams params2 = new ModerationNewParams(textToModerate2, "omni-moderation-latest");
+        ModerationNewParams params2 = new ModerationNewParams(textToModerate2);
 
         String textToModerate3 = "I do not like you.";
-        ModerationNewParams params3 = new ModerationNewParams(textToModerate3, "text-moderation-stable");
+        ModerationNewParams params3 = new ModerationNewParams(textToModerate3);
 
         try {
             ModerationNewResponse response = moderationService.moderate(params);
@@ -41,6 +41,7 @@ public class Main {
 
     private static void processModerationResponse(ModerationNewResponse response) {
         for (ModerationResult result : response.getResults()) {
+            System.out.println("Full Response: " + response);
             System.out.println("Flagged: " + result.isFlagged());
 
             ModerationCategoryScores scores = result.getCategoryScores();
