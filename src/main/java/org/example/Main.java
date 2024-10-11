@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        String apiKey = "";
+        String apiKey = "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";
 
         ModerationService moderationService = new ModerationService(apiKey);
 
@@ -15,10 +15,10 @@ public class Main {
         ModerationNewParams params1 = new ModerationNewParams(textToModerate1);
 
         String textToModerate2 = "I kill sb.";
-        ModerationNewParams params2 = new ModerationNewParams(textToModerate2);
+        ModerationNewParams params2 = new ModerationNewParams(textToModerate2, "omni-moderation-latest");
 
         String textToModerate3 = "I do not like you.";
-        ModerationNewParams params3 = new ModerationNewParams(textToModerate3);
+        ModerationNewParams params3 = new ModerationNewParams(textToModerate3, "text-moderation-stable");
 
         try {
             ModerationNewResponse response = moderationService.moderate(params);
@@ -41,7 +41,6 @@ public class Main {
 
     private static void processModerationResponse(ModerationNewResponse response) {
         for (ModerationResult result : response.getResults()) {
-            System.out.println("Full Response: " + response);
             System.out.println("Flagged: " + result.isFlagged());
 
             ModerationCategoryScores scores = result.getCategoryScores();

@@ -35,4 +35,5 @@ public class ModerationNewResponse {
     public void setResults(List<ModerationResult> results) {
         this.results = results;
     }
+
 }
