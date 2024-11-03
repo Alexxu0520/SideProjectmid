@@ -1,9 +1,12 @@
 package org.example;
+import org.springframework.stereotype.Service;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Service
 public class UserService {
 
     // Method to register a new user
@@ -127,6 +130,27 @@ public class UserService {
         } catch (SQLException e) {
             e.printStackTrace();
             return "Error: Unable to change password.";
+        }
+    }
+
+    public Integer getUserIdByEmail(String email) {
+        String query = "SELECT user_id FROM users WHERE email = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                return resultSet.getInt("user_id");
+            } else {
+                return null; // Email not found
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

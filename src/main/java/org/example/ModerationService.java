@@ -31,4 +31,32 @@ public class ModerationService {
             throw new IOException("Error during API call: " + response.body());
         }
     }
+
+    public double calculateSensitivityScore(ModerationCategoryScores scores) {
+        double totalScore = 0.0;
+        int count = 0;
+
+        totalScore += scores.getHate() * 2;
+        count++;
+        totalScore += scores.getHateThreatening() * 2;
+        count++;
+        totalScore += scores.getHarassment();
+        count++;
+        totalScore += scores.getHarassmentThreatening();
+        count++;
+        totalScore += scores.getSelfHarm();
+        count++;
+        totalScore += scores.getSexual();
+        count++;
+        totalScore += scores.getViolence() * 2;
+        count++;
+        totalScore += scores.getIllicit();
+        count++;
+        totalScore += scores.getViolenceGraphic() * 2;
+        count++;
+        totalScore += scores.getIllicitViolent();
+        count++;
+
+        return (totalScore / count) * 100;
+    }
 }
