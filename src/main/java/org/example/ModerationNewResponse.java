@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-// This class is used to store the response from the moderation API
 public class ModerationNewResponse {
 
     private String id; //Stores the id of the moderation request
