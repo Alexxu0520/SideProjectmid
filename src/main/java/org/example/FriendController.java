@@ -1,5 +1,4 @@
 package org.example;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -9,6 +8,7 @@ public class FriendController {
 
     private final FriendService friendService = new FriendService();
 
+    // Add Friend
     @PostMapping("/add")
     public String addFriend(@RequestBody FriendRequestDTO friendRequest) {
         return friendService.sendFriendRequest(friendRequest.getUserEmail(), friendRequest.getFriendEmail());

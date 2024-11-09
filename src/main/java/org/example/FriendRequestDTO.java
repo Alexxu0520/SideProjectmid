@@ -4,7 +4,7 @@ public class FriendRequestDTO {
     private String userEmail;
     private String friendEmail;
 
-    // Getters and Setters
+
     public String getUserEmail() {
         return userEmail;
     }

@@ -52,7 +52,7 @@ public class FriendService {
                 return "Error: Friend request already sent or you are already friends.";
             }
 
-            // Insert friend request if it doesn’t exist
+            // Insert friend request if it does not exist
             String addFriendQuery = "INSERT INTO friends (user_id, friend_user_id, status) VALUES (?, ?, 'pending')";
             try (PreparedStatement addFriendStmt = connection.prepareStatement(addFriendQuery)) {
                 addFriendStmt.setInt(1, userId);

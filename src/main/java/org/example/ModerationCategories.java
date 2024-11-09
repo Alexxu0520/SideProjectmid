@@ -1,7 +1,6 @@
 package org.example;
 import com.fasterxml.jackson.annotation.JsonProperty;
-//The ModerationCategories class holds a set of boolean flags that indicate whether certain types of content (like hate speech, violence, or harassment)
-// are present in a piece of text. Each category corresponds to a specific type of inappropriate or dangerous content.
+
 public class ModerationCategories {
     @JsonProperty("hate")
     private boolean hate;
